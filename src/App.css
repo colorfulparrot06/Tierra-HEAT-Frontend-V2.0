@@ -1,0 +1,279 @@
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #FFFFFF;
+  color: #333333;
+}
+
+h2, h3 {
+  font-weight: bold;
+  color: #333333;
+}
+
+p {
+  font-size: 1rem;
+  color: #666666;
+  margin-bottom: 15px;
+}
+
+
+.sidebar {
+  background-color: #1E3A8A;
+  width: 250px;
+  position: fixed;
+  top: 60px; 
+  left: 0;
+  bottom: 0;
+  padding: 20px;
+  color: white;
+  font-weight: bold;
+  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 10px 0;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.sidebar a:hover {
+  background-color: #1D2A6E;
+  padding-left: 10px;
+}
+
+
+/* Sidebar */
+.sidebar {
+  background-color: #1E3A8A;
+  width: 250px;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  bottom: 0;
+  padding: 20px;
+  color: white;
+  font-weight: bold;
+  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 10px 0;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.sidebar a:hover {
+  background-color: #1D2A6E;
+  padding-left: 10px;
+}
+
+
+/* Main Content Area */
+.main-content {
+  margin-left: 270px;
+  margin-top: 60px; 
+  padding: 20px;
+  background-color: #FFFFFF;
+}
+
+.section {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Main Content Area */
+.main-content {
+  margin-left: 270px;
+  margin-top: 60px; 
+  padding: 20px;
+  background-color: #FFFFFF; 
+}
+
+.section {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+.section h2 {
+  font-weight: bold;
+  color: #333333; 
+}
+
+.section p {
+  font-size: 1rem;
+  color: #666666; 
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+}
+
+.input-container input {
+  border: 1px solid #CCCCCC;
+  padding: 10px;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.input-container .info-icon {
+  font-size: 1.5rem;
+  color: #1E3A8A; 
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.section input[type="radio"] {
+  margin-right: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+section textarea {
+  border: 1px solid #CCCCCC;
+  padding: 10px;
+  width: 100%;
+  font-size: 1rem;
+  height: 150px;
+}
+
+/* Specific Section Styling */
+#budget .section {
+  background-color: #F5F5F5; 
+}
+
+#location .section {
+  background-color: #F5F5F5; 
+}
+
+#purpose .section {
+  background-color: #F5F5F5; 
+}
+
+#existing-systems .section {
+  background-color: #F5F5F5; 
+}
+
+#configurations .section {
+  background-color: #F5F5F5; 
+}
+
+#goals .section {
+  background-color: #F5F5F5; 
+}
+
+/* Save Button */
+.save-button {
+  background-color: #FFB74D; 
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  font-size: 1rem;
+}
+
+.save-button:hover {
+  background-color: #FF8F00; 
+}
+
+/* Section Inputs */
+input[type="text"], input[type="number"], textarea {
+  padding: 10px;
+  border: 1px solid #CCCCCC;
+  width: 100%;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+input[type="radio"] {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+/* Section Headers */
+h3 {
+  font-size: 1.25rem;
+  color: #333333;
+}
+
+h4 {
+  font-size: 1rem;
+  color: #333333;
+}
+
+/* Layout Tweaks */
+.section .input-container {
+  margin-bottom: 15px;
+}
+
+.input-container input[type="text"] {
+  width: 70%;
+}
+
+.input-container .info-icon {
+  margin-left: 15px;
+}
+
+/* Hover effects on section elements */
+input[type="radio"]:hover,
+input[type="checkbox"]:hover {
+  cursor: pointer;
+}
+
+
+.section p {
+  margin-bottom: 15px;
+}
+
+/* Global font and colors */
+body {
+  font-family: "Arial", sans-serif; 
+  background-color: #f4f4f4; 
+  color: #333333;
+}
+.save-btn {
+  background-color: #140532; 
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.save-btn:hover {
+  background-color: #0d065d; 
+}
+
+input[type="text"], .other-input-field, textarea {
+  font-family: "Arial", sans-serif;
+  color: #333333;
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 10px;
+}
+
+input[type="text"], .other-input-field, textarea {
+  border: 1px solid #cccccc;
+}
+
+input[type="radio"] {
+  margin-right: 10px;
+}

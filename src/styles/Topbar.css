@@ -1,0 +1,30 @@
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #070012; 
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .topbar-button {
+    padding: 10px 20px;
+    background-color: #0400ce; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .topbar-button:hover {
+    background-color: #03008c;
+  }
+  
+  .topbar-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
