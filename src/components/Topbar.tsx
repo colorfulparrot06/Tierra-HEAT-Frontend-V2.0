@@ -4,7 +4,7 @@ import "../styles/Topbar.css";
 const Topbar: React.FC = () => {
   return (
     <div className="topbar">
-      <button className="topbar-button">Get Started</button>
+      {/* <button className="topbar-button">Get Started</button> */}
       <div className="topbar-title">Tierra Heat Simulations</div>
     </div>
   );

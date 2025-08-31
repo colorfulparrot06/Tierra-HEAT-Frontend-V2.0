@@ -17,7 +17,10 @@
     border-radius: 5px;
     font-size: 1rem;
     cursor: pointer;
+    display: block;
+    margin: 0;
   }
+  
   
   .topbar-button:hover {
     background-color: #03008c;
@@ -26,5 +29,7 @@
   .topbar-title {
     font-size: 1.5rem;
     font-weight: bold;
+    color:aliceblue; 
+    text-align: left;
   }
   
