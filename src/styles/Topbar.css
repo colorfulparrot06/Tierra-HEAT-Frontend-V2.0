@@ -1,14 +1,16 @@
 .topbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    background-color: #111521; /* dark blue*/
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #111521; /* dark blue */
+  position: fixed;            /* fixed instead of sticky */
+  top: 0;
+  left: 0;
+  width: 100%;               /* make it span full width */
+  z-index: 1000;
+}
+
   .topbar-button {
     padding: 10px 20px;
     background-color: #3871eb; 

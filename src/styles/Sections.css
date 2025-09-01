@@ -1,0 +1,173 @@
+/* -------- Section Container -------- */
+.section {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 6px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    margin-left: 15px;
+    margin-right: 10px;
+    
+        scroll-margin-top: 80px; /* same as topbar height */
+
+  }
+  
+  .section h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 10px;
+  }
+  
+  .section p {
+    font-size: 1rem;
+    color: #666666;
+    margin-bottom: 15px;
+  }
+  
+
+  /* Optional wrapper for cleaner layouts */
+  .section-content {
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  /* -------- Inputs & Textareas -------- */
+  input[type="text"],
+  input[type="number"],
+  textarea,
+  .other-input-field {
+    font-family: "Arial", sans-serif;
+    font-size: 1rem;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    color: #333333;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  textarea {
+    height: 150px;
+    resize: vertical;
+  }
+  
+  input[type="radio"],
+  input[type="checkbox"] {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  
+  /* -------- Buttons -------- */
+  .save-btn {
+    background-color: #140532;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    align-self: flex-start; /* button aligns left */
+  }
+  
+  .save-btn:hover {
+    background-color: #0d065d;
+  }
+ /* -------- Generate Model Button -------- */
+.generateButton {
+    display: flex;
+    justify-content: center; /* center horizontally */
+    margin-top: 20px;
+  }
+  
+  .generateButton .save-btn {
+    background-color: #140532;   /* main color */
+    color: #ffffff;
+    font-size: 20px;             /* larger font */
+    padding: 15px 30px;          /* bigger button */
+    border-radius: 12px;         /* rounded edges */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  /* Hover effect */
+  .generateButton .save-btn:hover {
+    background-color: #0d065d;  /* new hover color */
+    transform: scale(1.05);      /* subtle grow effect on hover */
+  }
+  
+  /* -------- Icons -------- */
+  /*.question-icon,*/
+  /*
+  .info-icon {
+    font-size: 1.2rem;
+    color: #1E3A8A;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  */
+  /* -------- Layout Tweaks -------- */
+  .input-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .input-container input[type="text"] {
+    flex: 1;
+  }
+  
+
+  /* -------- Radio Rectangle Group -------- */
+.radio-rectangle-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* spacing between each option */
+  }
+  
+  .radio-rectangle {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #f9f9f9;
+    transition: background-color 0.2s, border-color 0.2s;
+    font-size: 1rem;
+    user-select: none; /* prevents accidental text selection when clicking */
+  }
+  
+  /* Make the entire rectangle clickable */
+  .radio-rectangle input[type="radio"] {
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  /* Hover effect */
+  .radio-rectangle:hover {
+    background-color: #e0e0ff;
+    border-color: #140532;
+  }
+  
+  /* Checked state styling */
+  .radio-rectangle input[type="radio"]:checked + span,
+  .radio-rectangle input[type="radio"]:checked {
+    border-color: #140532;
+    background-color: #d0d0ff;
+  }
+  
+  /* Optional: style for "other" text input inside the rectangle group */
+  .radio-rectangle-group .other-input-field {
+    margin-top: 5px;
+    padding: 8px 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
