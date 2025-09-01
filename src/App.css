@@ -18,38 +18,9 @@ p {
   margin-bottom: 15px;
 }
 
-
+/*Sidebar */
 .sidebar {
-  background-color: #1E3A8A;
-  width: 250px;
-  position: fixed;
-  top: 60px; 
-  left: 0;
-  bottom: 0;
-  padding: 20px;
-  color: white;
-  font-weight: bold;
-  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
-}
-
-.sidebar a {
-  display: block;
-  color: white;
-  text-decoration: none;
-  padding: 10px 0;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-.sidebar a:hover {
-  background-color: #1D2A6E;
-  padding-left: 10px;
-}
-
-
-/* Sidebar */
-.sidebar {
-  background-color: #1E3A8A;
+  background-color: #2b303b;
   width: 250px;
   position: fixed;
   top: 60px;
@@ -65,39 +36,55 @@ p {
   display: block;
   color: white;
   text-decoration: none;
-  padding: 10px 0;
+  padding: 10px;
   font-size: 1rem;
   cursor: pointer;
 }
 
 .sidebar a:hover {
-  background-color: #1D2A6E;
+  background-color: #191b21;
+  padding-left: 10px;
+}
+.navigation1{
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+/* Container for subheadings */
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem; /* adds spacing between subheadings */
+  margin-left: 5px; /* indent all subheadings */
+}
+
+/* Links styled as subheadings */
+.nav-item a {
+  display: block;
+  font-size: 1rem;
+  font-weight: normal;
+  color: #cfd8dc;
+  text-decoration: none;
+  padding: 6px 0;
+  transition: color 0.2s, padding-left 0.2s;
+  margin-left: 10px;
+  
+}
+
+.nav-item a:hover {
+  color: #ffffff;
   padding-left: 10px;
 }
 
-
 /* Main Content Area */
 .main-content {
   margin-left: 270px;
   margin-top: 60px; 
   padding: 20px;
-  background-color: #FFFFFF;
-}
-
-.section {
-  background-color: white;
-  padding: 20px;
-  margin-bottom: 30px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-
-/* Main Content Area */
-.main-content {
-  margin-left: 270px;
-  margin-top: 60px; 
-  padding: 20px;
-  background-color: #FFFFFF; 
+  background-color: #f5f5f5; 
 }
 
 .section {
@@ -138,6 +125,7 @@ p {
 
 .section input[type="radio"] {
   margin-right: 10px;
+  margin-left: 10px
 }
 
 label {
@@ -180,7 +168,7 @@ section textarea {
 
 /* Save Button */
 .save-button {
-  background-color: #FFB74D; 
+  background-color: #000103; 
   color: white;
   padding: 10px 15px;
   border-radius: 5px;

@@ -1,0 +1,41 @@
+.sidebar-module{
+    background-color: #4287f5; /* dark blue*/
+  }
+
+.navigation1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color:aliceblue; 
+    text-align: left;
+  }
+
+  /*#2f2f40*/ 
+  .sidebar-module{
+    background-color: #2f2f40;
+    width: 250px;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    bottom: 0;
+    padding: 20px;
+    color: white;
+    font-weight: bold;
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .sidebar a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 10px 0;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .sidebar a:hover {
+    background-color: #1D2A6E;
+    padding-left: 10px;
+  }
+  
+  
+  

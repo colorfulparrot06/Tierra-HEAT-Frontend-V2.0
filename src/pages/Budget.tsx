@@ -10,14 +10,12 @@ const Budget = () => {
         question mark on the top right corner for more information and details
         on pricing for SAGSHPs.
       </p>
-      <div className="input-container">
-        <input
-          type="text"
-          className="budget-input"
-          placeholder="Enter your budget here"
-        />
-        <span className="question-icon">?</span>
-      </div>
+      <input
+        type="text"
+        className="budget-input"
+        placeholder="Enter your budget here"
+      />
+      <span className="question-icon">?</span>
       <button className="save-btn">Save</button>
     </div>
   );

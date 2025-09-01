@@ -3,7 +3,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-    background-color: #ffffff; 
+    background-color: #111521; /* dark blue*/
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -11,19 +11,19 @@
   
   .topbar-button {
     padding: 10px 20px;
-    background-color: #0400ce; 
+    background-color: #3871eb; 
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     font-size: 1rem;
     cursor: pointer;
     display: block;
-    margin: 0;
+    margin-right: 2.5rem;
+    text-align: right;
   }
   
-  
   .topbar-button:hover {
-    background-color: #03008c;
+    background-color: #1e50bd;
   }
   
   .topbar-title {
@@ -31,5 +31,6 @@
     font-weight: bold;
     color:aliceblue; 
     text-align: left;
+    margin-left: 2.5rem;
   }
   
