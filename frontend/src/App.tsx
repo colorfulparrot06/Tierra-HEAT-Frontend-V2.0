@@ -1,11 +1,18 @@
 // src/App.tsx
 import React from "react";
-import { Routes, Route } from "react-router-dom"; 
+import { Routes, Route } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
 import Topbar from "./components/Topbar";
 import Home from "./pages/Home";
-import GenModel from "./pages/GenModel"; 
+import GenModel from "./pages/GenModel";
 import "./App.css";
+
+import "../styles/globals.css";
+import type { AppProps } from "next/app";
+
+export default function App({ Component, pageProps }: AppProps) {
+  return <Component {...pageProps} />;
+}
 
 const App: React.FC = () => {
   return (
