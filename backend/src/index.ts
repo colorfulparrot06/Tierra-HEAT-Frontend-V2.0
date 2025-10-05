@@ -1,18 +1,13 @@
 import express from "express";
-import cors from "cors";
-import locationRoutes from "./routes/location"; // path must be correct
 import dotenv from "dotenv";
-dotenv.config(); // loads API key from .env
+import locationRoutes from "./routes/location.js";
+declare const process: any;
 
+dotenv.config();
 const app = express();
-const PORT = 5000;
 
-app.use(cors());
 app.use(express.json());
-
-
 app.use("/api/location", locationRoutes);
 
-app.listen(PORT, () => {
-  console.log(`Backend running on http://localhost:${PORT}`);
-});
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
