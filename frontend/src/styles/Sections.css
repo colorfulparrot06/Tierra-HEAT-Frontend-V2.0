@@ -63,7 +63,7 @@
   
   /* -------- Buttons -------- */
   .save-btn {
-    background-color: #140532;
+    background-color: #0d065d;
     color: white;
     border: none;
     padding: 10px 15px;
@@ -74,7 +74,7 @@
   }
   
   .save-btn:hover {
-    background-color: #0d065d;
+    background-color: #140532;
   }
  /* -------- Generate Model Button -------- */
 .generateButton {

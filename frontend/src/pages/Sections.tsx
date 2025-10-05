@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/Sections.css";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 /* -------------------- Budget -------------------- */
 const Budget = () => {
@@ -195,7 +195,7 @@ const GenerateModelButton: React.FC = () => {
   const navigate = useNavigate();
 
   const goToGenModel = () => {
-    navigate('/genmodel');
+    navigate("/genmodel");
   };
 
   return (
