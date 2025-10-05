@@ -23,6 +23,18 @@
     margin-right: 2.5rem;
     text-align: right;
   }
+  .home-button {
+    padding: 10px 20px;
+    background-color: #3871eb; 
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: block;
+    margin-right: 2.5rem;
+    text-align: right;
+  }
   
   .topbar-button:hover {
     background-color: #1e50bd;
