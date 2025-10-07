@@ -1,4 +1,4 @@
-import apiClient from "../utils/apiClient";
+import apiClient from "../utils/apiClient.js";
 
 export const getSolarData = async (lat: any, lon: any) => {
   const url = "https://developer.nrel.gov/api/pvwatts/v8.json";
