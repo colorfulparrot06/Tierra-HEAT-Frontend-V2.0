@@ -1,4 +1,4 @@
-export const recommendSystems = (geothermal, solar) => {
+export const recommendSystems = (geothermal: { temperatureGradient: any; resourceDepth?: any; capacityFactor?: any; heatFlow?: any; }, solar: { acAnnual?: any; solradAnnual?: any; capacityFactor: any; }) => {
     let geothermalType;
     if (geothermal.temperatureGradient > 70) {
       geothermalType = "Deep Enhanced Geothermal System (EGS)";

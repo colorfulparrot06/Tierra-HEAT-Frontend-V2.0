@@ -1,6 +1,6 @@
-import apiClient from "../src/utils/apiClient";
+import apiClient from "../utils/apiClient";
 
-export const getSolarData = async (lat, lon) => {
+export const getSolarData = async (lat: any, lon: any) => {
   const url = "https://developer.nrel.gov/api/pvwatts/v8.json";
   const params = {
     api_key: process.env.NREL_API_KEY,

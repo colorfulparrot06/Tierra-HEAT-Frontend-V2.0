@@ -1,4 +1,5 @@
 import express from "express";
+
 import { getLocationAnalysis } from "../controllers/locationController";
 
 const router = express.Router();

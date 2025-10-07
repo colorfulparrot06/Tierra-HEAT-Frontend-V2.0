@@ -1,7 +1,7 @@
 import apiClient from "../utils/apiClient";
 
 export const getGeothermalData = async (lat: any, lon: any) => {
-  const url = "https://developer.nrel.gov/api/georesources/v1/";
+  const url = "https://developer.nrel.gov/api/georeservations/v1/data.json";
   const params = {
     api_key: process.env.NREL_API_KEY,
     lat,
