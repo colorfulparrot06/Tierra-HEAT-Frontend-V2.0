@@ -1,14 +1,13 @@
-// src/services/locationService.ts
 import axios from "axios";
 
-const API_BASE_URL = "http://localhost:5000/api"; // backend address
+const API_URL = "http://localhost:5000/api/location/analyze";
 
-export async function getLocationPotential(lat: number, lon: number) {
+export async function analyzeLocation(lat: number, lon: number) {
   try {
-    const response = await axios.post(`${API_BASE_URL}/location`, { lat, lon });
-    return response.data; // this will include whatever the backend returns
+    const response = await axios.post(API_URL, { lat, lon });
+    return response.data;
   } catch (error) {
-    console.error("Error fetching location potential:", error);
+    console.error("Error calling backend:", error);
     throw error;
   }
 }
