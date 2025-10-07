@@ -1,6 +1,7 @@
-import React from "react";
 import "../styles/Sections.css";
 import { useNavigate } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { UserInputContext } from "../context/UserInputContext";
 
 /* -------------------- Budget -------------------- */
 const Budget = () => {
@@ -101,21 +102,41 @@ const Goals = () => {
 };
 
 /* -------------------- Location -------------------- */
-const Location = () => {
+
+const Location: React.FC = () => {
+  const { setLocation } = useContext(UserInputContext);
+  const [input, setInput] = useState("");
+
+  const saveLocation = () => {
+    if (!input.includes(",")) {
+      alert("Please enter latitude and longitude in the format: lat,lon");
+      return;
+    }
+
+    setLocation(input);
+    alert("Location saved!");
+  };
+
   return (
     <div className="section" id="location">
       <h2>Location</h2>
       <div className="section-content">
-        <p>Please type in your complete address in the box below.</p>
+        <p>
+          Please type in your complete latitude and longitude in the box below
+          (e.g., 32.7767,-96.7970).
+        </p>
         <div className="input-container">
           <input
             type="text"
             className="other-input-field"
-            placeholder="Enter your location here"
+            placeholder="Enter your lat,lon here"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
           />
-          {/*} <span className="question-icon">?</span> */}
         </div>
-        <button className="save-btn">Save</button>
+        <button className="save-btn" onClick={saveLocation}>
+          Save
+        </button>
       </div>
     </div>
   );

@@ -1,23 +1,30 @@
 export const recommendSystems = (geothermal, solar) => {
-    let geothermalType;
-    if (geothermal.temperatureGradient > 70) {
-        geothermalType = "Deep Enhanced Geothermal System (EGS)";
+    const recommendations = [];
+    const ghi = solar.resource?.avgGhiAnnual || solar.performance?.solradAnnual;
+    if (ghi && ghi > 4.5) {
+        recommendations.push("High solar irradiance detected — rooftop solar PV systems are strongly recommended.");
     }
-    else if (geothermal.temperatureGradient > 50) {
-        geothermalType = "Medium-depth Hydrothermal System";
-    }
-    else {
-        geothermalType = "Ground Source Heat Pump (GSHP)";
-    }
-    let solarType;
-    if (solar.capacityFactor > 18) {
-        solarType = "Tracking PV Array";
-    }
-    else if (solar.capacityFactor > 15) {
-        solarType = "Fixed Tilt Rooftop PV";
+    else if (ghi) {
+        recommendations.push("Moderate solar resource — solar systems are viable with optimized tilt and tracking.");
     }
     else {
-        solarType = "Community Solar Installation";
+        recommendations.push("Solar data unavailable — recommend site survey.");
     }
-    return { geothermalType, solarType };
+    // Geothermal logic stays the same...
+    if (geothermal.count > 0) {
+        const hasWeatherFile = geothermal.componentsNearby.some((c) => c.tags?.includes("Weather File"));
+        if (hasWeatherFile) {
+            recommendations.push("Local weather and subsurface components found — consider ground-source heat pumps or hybrid systems.");
+        }
+        else {
+            recommendations.push("No specific geothermal components found nearby — feasibility study suggested.");
+        }
+    }
+    else {
+        recommendations.push("No nearby geothermal resources found — rely primarily on solar systems.");
+    }
+    return {
+        summary: "Location-based renewable energy recommendation",
+        recommendations,
+    };
 };

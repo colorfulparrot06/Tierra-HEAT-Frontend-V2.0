@@ -13,10 +13,15 @@ import FinancialAnalysis from "./pages/genmodel/financial-analysis";
 import EnergyOptimization from "./pages/genmodel/energy-optimization";
 import "./App.css";
 
+// Import the context provider
+import { UserInputProvider } from "./context/UserInputContext";
+
 const App: React.FC = () => {
   return (
-    <div className="app">
-      <Topbar />
+    // Wrap the entire app with UserInputProvider
+    <UserInputProvider>
+      <div className="app">
+        <Topbar />
 
       <div className="main-content">
         <Routes>
@@ -31,11 +36,12 @@ const App: React.FC = () => {
             }
           />
 
-          {/* GenModel pages with their own sidebar */}
-          <Route path="/genmodel/*" element={<GenModelLayout />} />
-        </Routes>
+            {/* GenModel pages with their own sidebar */}
+            <Route path="/genmodel/*" element={<GenModelLayout />} />
+          </Routes>
+        </div>
       </div>
-    </div>
+    </UserInputProvider>
   );
 };
 

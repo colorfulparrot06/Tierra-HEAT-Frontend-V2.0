@@ -1,20 +1,31 @@
 import apiClient from "../utils/apiClient.js";
 
-export const getGeothermalData = async (lat: any, lon: any) => {
-  const url = "https://developer.nrel.gov/api/georeservations/v1/data.json";
+export const getGeothermalViaBCL = async (lat: number, lon: number) => {
+  // Build a BCL search URL that uses geospatial search
+  const keyword = `location:${lat},${lon}`;
+  const format = "json";
+  const baseUrl = `https://bcl.nrel.gov/api/search/${encodeURIComponent(keyword)}.${format}`;
+  
   const params = {
-    api_key: process.env.NREL_API_KEY,
-    lat,
-    lon,
+    show_rows: 10,
   };
 
-  const { data } = await apiClient.get(url, { params });
+  const { data } = await apiClient.get(baseUrl, { params });
+  const results = data.result || [];
 
   // Simplify output
+  const simplified = results.map((item: any) => ({
+    uuid: item.uuid,
+    name: item.name,
+    bundle: item.bundle,
+    tags: item.tags,
+    attributes: item.attributes,
+    url: item.url,
+  }));
+
   return {
-    temperatureGradient: data.temperature_gradient || "N/A",
-    resourceDepth: data.depth || "N/A",
-    capacityFactor: data.capacity_factor || "N/A",
-    heatFlow: data.heat_flow || "N/A",
+    queryLocation: { lat, lon },
+    count: simplified.length,
+    componentsNearby: simplified,
   };
 };

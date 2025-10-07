@@ -1,4 +1,4 @@
-import { getGeothermalData } from "../services/geothermalService.js";
+import { getGeothermalViaBCL } from "../services/geothermalService.js";
 import { getSolarData } from "../services/solarService.js";
 import { recommendSystems } from "../services/recommendationService.js";
 export const getLocationAnalysis = async (req, res) => {
@@ -7,8 +7,12 @@ export const getLocationAnalysis = async (req, res) => {
         if (!lat || !lon) {
             return res.status(400).json({ error: "Latitude and longitude required" });
         }
-        const geothermal = await getGeothermalData(lat, lon);
-        const solar = await getSolarData(lat, lon);
+        // Call both services in parallel
+        const [geothermal, solar] = await Promise.all([
+            getGeothermalViaBCL(lat, lon),
+            getSolarData(lat, lon),
+        ]);
+        // Generate recommendations based on available data
         const recommendations = recommendSystems(geothermal, solar);
         const result = {
             location: { lat, lon },
@@ -19,7 +23,7 @@ export const getLocationAnalysis = async (req, res) => {
         res.json(result);
     }
     catch (error) {
-        console.error(error);
+        console.error("Error in getLocationAnalysis:", error);
         res.status(500).json({ error: "Failed to retrieve location data" });
     }
 };
