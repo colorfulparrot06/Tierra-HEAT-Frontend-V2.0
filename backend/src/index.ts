@@ -6,10 +6,18 @@ declare const process: any;
 
 dotenv.config();
 const app = express();
-app.use(cors());/*adding cors 10:32pm */
-
+// app.use(cors());/*adding cors 10:32pm */
 app.use(express.json());
 app.use("/api/location", locationRoutes);
+app.get ('/', (req, res) => {
+        res.send("Hello Client, use the right path for the services")
+})
+
+// app.get('/api/location/analyze', (req, res) => {
+//     console.log(req)
+//     res.send('Hello Analyze!')
+//   })
+
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

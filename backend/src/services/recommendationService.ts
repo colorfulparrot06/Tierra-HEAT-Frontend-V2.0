@@ -20,8 +20,10 @@ interface SolarData {
 
 export const recommendSystems = (geothermal: GeothermalData, solar: SolarData) => {
   const recommendations: string[] = [];
+  console.log("Fetching Recs data...");
 
   const ghi = solar.resource?.avgGhiAnnual || solar.performance?.solradAnnual;
+  console.log("Recs OK");
 
   if (ghi && ghi > 4.5) {
     recommendations.push(
@@ -34,12 +36,14 @@ export const recommendSystems = (geothermal: GeothermalData, solar: SolarData) =
   } else {
     recommendations.push("Solar data unavailable — recommend site survey.");
   }
+  console.log(JSON.stringify(geothermal.componentsNearby, null, 2));
 
   // Geothermal logic stays the same...
   if (geothermal.count > 0) {
-    const hasWeatherFile = geothermal.componentsNearby.some((c) =>
-      c.tags?.includes("Weather File")
-    );
+    const hasWeatherFile = geothermal.componentsNearby.some((c) => {
+      const tagsArray = Array.isArray(c.tags) ? c.tags : [];
+      return tagsArray.includes("Weather File");
+    });
     if (hasWeatherFile) {
       recommendations.push(
         "Local weather and subsurface components found — consider ground-source heat pumps or hybrid systems."

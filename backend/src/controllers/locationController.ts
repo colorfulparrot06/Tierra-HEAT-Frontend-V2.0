@@ -3,8 +3,11 @@ import { Request, Response } from "express";
 import { getGeothermalViaBCL } from "../services/geothermalService.js";
 import { getSolarData } from "../services/solarService.js";
 import { recommendSystems } from "../services/recommendationService.js";
+import { request } from "http";
 
 export const getLocationAnalysis = async (req: Request, res: Response) => {
+  console.log(request);
+
   try {
     const { lat, lon } = req.body;
 

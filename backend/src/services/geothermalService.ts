@@ -10,17 +10,19 @@ export const getGeothermalViaBCL = async (lat: number, lon: number) => {
     show_rows: 10,
   };
 
+  console.log("Fetching Geothermal data for: " + baseUrl);
   const { data } = await apiClient.get(baseUrl, { params });
   const results = data.result || [];
+  console.log("Fetched Geothermal data:" + JSON.stringify(results, null, 3));
 
   // Simplify output
   const simplified = results.map((item: any) => ({
-    uuid: item.uuid,
-    name: item.name,
-    bundle: item.bundle,
-    tags: item.tags,
-    attributes: item.attributes,
-    url: item.url,
+    uuid: item.component.uuid,
+    name: item.component.name,
+    bundle: item.component.bundle,
+    tags: item.component.tags,
+    attributes: item.component.attributes,
+    url: item.component.url,
   }));
 
   return {
