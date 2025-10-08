@@ -13,12 +13,15 @@ export const UserInputContext = createContext<UserInputContextType>({
   setLocation: () => {},
 });
 
-export const UserInputProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+export const UserInputProvider: React.FC<{ children: ReactNode }> = ({
+  children,
+}) => {
   const [lat, setLat] = useState<number | null>(null);
   const [lon, setLon] = useState<number | null>(null);
 
   // Parses input string "lat,lon" and updates state
   const setLocation = (input: string) => {
+    console.log("input:" + input);
     const [latStr, lonStr] = input.split(",");
     const parsedLat = parseFloat(latStr.trim());
     const parsedLon = parseFloat(lonStr.trim());

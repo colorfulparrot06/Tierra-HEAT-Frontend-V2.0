@@ -1,17 +1,24 @@
 import express from "express";
 import dotenv from "dotenv";
+import cors from "cors";
 import locationRoutes from "./routes/location.js";
 dotenv.config();
 const app = express();
-// app.use(cors());/*adding cors 10:32pm */
+// Parse JSON body
 app.use(express.json());
-app.use("/api/location", locationRoutes);
-app.get('/', (req, res) => {
-    res.send("Hello Client, use the right path for the services");
+// Enable CORS for your frontend
+app.use(cors({
+    origin: "http://localhost:5173", // frontend URL
+    methods: ["GET", "POST", "OPTIONS"],
+    allowedHeaders: ["Content-Type"],
+}));
+// Handle OPTIONS preflight requests for all routes
+app.options("*", cors());
+// Test route to verify backend is reachable from frontend
+app.get("/api/test", (req, res) => {
+    res.json({ message: "Backend is working!" });
 });
-// app.get('/api/location/analyze', (req, res) => {
-//     console.log(req)
-//     res.send('Hello Analyze!')
-//   })
-const PORT = process.env.PORT || 5000;
+// Location API routes
+app.use("/api/location", locationRoutes);
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
