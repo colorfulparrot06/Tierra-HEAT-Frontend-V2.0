@@ -1,33 +1,116 @@
-/* -------- Location Analysis Section -------- */
+/* src/styles/Output/location-analysis.css */
+
+/* Container */
 .location-analysis-section {
-    background-color: white;
-    padding: 20px;
-    margin: 20px 15px 30px 15px; /* top/right/bottom/left */
-    border-radius: 8px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    scroll-margin-top: 80px; /* ensures anchor links don't hide under topbar */
-  }
-  
-  /* Section Title */
-  .location-analysis-section h2 {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #333333;
-    margin-bottom: 15px;
-  }
-  
-  /* Section Paragraph */
-  .location-analysis-section p {
-    font-size: 1rem;
-    color: #666666;
-    line-height: 1.6;
-    margin-bottom: 15px;
-  }
-  
-  /* Optional content wrapper for spacing multiple paragraphs or elements */
-  .location-analysis-content {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
+  padding: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+  color: #1f2937; /* dark slate */
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* Header */
+.la-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+.la-header h2 {
+  margin: 0;
+  font-size: 22px;
+  color: #0f172a;
+}
+
+/* Summary block */
+.la-summary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.la-score {
+  background: linear-gradient(135deg,#ffffff,#f7fafc);
+  border-radius: 8px;
+  padding: 10px 14px;
+  box-shadow: 0 4px 10px rgba(15,23,42,0.04);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.la-score-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: #111827;
+}
+.la-score-label {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* Grade badges */
+.la-grade {
+  padding: 8px 12px;
+  border-radius: 16px;
+  font-weight: 600;
+  color: white;
+}
+.la-grade-high { background: #16a34a; }     /* green */
+.la-grade-medium { background: #f59e0b; }   /* amber */
+.la-grade-low { background: #ef4444; }      /* red */
+
+/* Grid layout */
+.la-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 14px;
+}
+
+/* InfoCard styling (matches InfoCard component) */
+.info-card {
+  background: #ffffff;
+  padding: 16px;
+  border-radius: 5px;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.06);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.info-card:hover { box-shadow: 0 12px 28px rgba(2,6,23,0.08); }
+.info-card-header { display:flex; justify-content:space-between; align-items:center; gap:8px; margin-bottom:8px; }
+.info-card-title { font-size: 16px; margin: 0; color: #0f172a; }
+.info-card-sub { font-size: 12px; color: #6b7280; }
+
+/* Body */
+.info-card-body { font-size: 14px; color: #111827; }
+
+/* Metric rows inside cards */
+.metric-row { display:flex; gap:12px; flex-wrap:wrap; margin-top:8px; }
+.metric { flex: 1 1 150px; min-width: 120px; }
+.metric-label { font-size: 12px; color: #6b7280; margin-bottom: 4px; }
+.metric-value { font-size: 15px; font-weight:700; color:#0f172a; }
+
+/* Samples and lists */
+.list-sample { margin-top: 10px; font-size: 13px; color:#334155; }
+.list-sample ul { padding-left: 18px; margin:6px 0 0; }
+.list-sample li { margin-bottom:4px; }
+
+/* Recommendations */
+.recommend-list ul { padding-left: 18px; margin-top: 8px; color:#0f172a; }
+
+/* Small helper text / errors */
+.la-info { margin: 18px; color: #374151; }
+.la-error { margin: 18px; color: #b91c1c; font-weight:600; }
+
+/* Responsive */
+@media (max-width: 980px) {
+  .la-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .la-grid { grid-template-columns: 1fr; }
+  .la-header { flex-direction: column; align-items: flex-start; gap:10px; }
+  .la-summary { width:100%; justify-content: space-between; }
+}
