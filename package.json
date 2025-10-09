@@ -1,8 +1,12 @@
 {
   "devDependencies": {
-    "@types/node": "^24.6.2"
+    "@types/node": "^24.6.2",
+    "@types/uuid": "^10.0.0"
   },
   "dependencies": {
-    "cors": "^2.8.5"
+    "axios": "^1.12.2",
+    "cors": "^2.8.5",
+    "csv-parse": "^6.1.0",
+    "uuid": "^13.0.0"
   }
 }
