@@ -76,7 +76,7 @@ export async function runCandidateGrid(
 
 export async function runMonteCarlo(candidates: Candidate[]): Promise<MonteCarloResult[]> {
   const monteCarloResults: MonteCarloResult[] = [];
-
+  console.log("Fetching Monte Carlo data...");
   for (const c of candidates) {
     const simulations = 1000;
     const npvSamples: number[] = [];
@@ -95,7 +95,7 @@ export async function runMonteCarlo(candidates: Candidate[]): Promise<MonteCarlo
       const m = mean(arr);
       return Math.sqrt(arr.reduce((sum, val) => sum + (val - m) ** 2, 0) / arr.length);
     };
-
+    console.log("Monte Carlo OK");
     monteCarloResults.push({
       id: c.id,
       pv_kw: c.pv_kw,
