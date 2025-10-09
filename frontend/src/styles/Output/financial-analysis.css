@@ -1,33 +1,72 @@
-/* -------- Location Analysis Section -------- */
-.financial-analysis-section {
-    background-color: white;
-    padding: 20px;
-    margin: 20px 15px 30px 15px; /* top/right/bottom/left */
-    border-radius: 8px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    scroll-margin-top: 80px; /* ensures anchor links don't hide under topbar */
-  }
-  
-  /* Section Title */
-  .financial-analysis-section h2 {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #333333;
-    margin-bottom: 15px;
-  }
-  
-  /* Section Paragraph */
-  .financial-analysis-section p {
-    font-size: 1rem;
-    color: #666666;
-    line-height: 1.6;
-    margin-bottom: 15px;
-  }
-  
-  /* Optional content wrapper for spacing multiple paragraphs or elements */
-  .financial-analysis-content {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
+
+.financial-analysis {
+  padding: 2rem;
+  color: #0E3559;
+  font-family: 'Sofia Sans Condensed', sans-serif;
+  background-color: #FAF5ED;
+  min-height: 100vh;
+}
+
+.financial-card {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+  width: 100%;
+  max-width: 600px;
+}
+
+.error {
+  color: #a00;
+  font-weight: bold;
+}
+
+
+
+
+/* .financial-analysis-section {
+  padding: 2rem;
+  color: #0E3559;
+}
+
+.run-btn {
+  background-color: #0E3559;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.run-btn:hover {
+  background-color: #164B80;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+
+.financial-analysis {
+  padding: 2rem;
+  color: #0E3559;
+  font-family: 'Sofia Sans Condensed', sans-serif;
+  background-color: #FAF5ED;
+  min-height: 100vh;
+}
+
+.financial-card {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+  width: 100%;
+  max-width: 600px;
+}
+
+ */

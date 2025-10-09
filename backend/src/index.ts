@@ -2,6 +2,9 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors"; /*adding cors 10:32pm */
 import locationRoutes from "./routes/location.js";
+import financialRoutes from "./routes/financial.js";
+
+
 declare const process: any;
 
 dotenv.config();
@@ -16,6 +19,7 @@ app.use(
       
 app.use(express.json());
 app.use("/api/location", locationRoutes);
+app.use("/api/financial", financialRoutes);
 app.get ('/', (req, res) => {
         res.send("Hello Client, use the right path for the services")
 })

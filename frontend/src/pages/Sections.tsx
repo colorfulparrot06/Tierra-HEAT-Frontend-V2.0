@@ -4,26 +4,54 @@ import React, { useContext, useState } from "react";
 import { UserInputContext } from "../context/UserInputContext";
 
 /* -------------------- Budget -------------------- */
+/* -------------------- Budget -------------------- */
 const Budget = () => {
+  const { setBudgetRange } = useContext(UserInputContext);
+  const [min, setMin] = useState("");
+  const [max, setMax] = useState("");
+
+  const handleSave = () => {
+    const minVal = parseFloat(min);
+    const maxVal = parseFloat(max);
+
+    if (isNaN(minVal) || isNaN(maxVal) || minVal < 0 || maxVal <= minVal) {
+      alert("Please enter valid budget values (min < max).");
+      return;
+    }
+
+    setBudgetRange(minVal, maxVal);
+    alert(
+      `Budget range saved: $${minVal.toLocaleString()} - $${maxVal.toLocaleString()}`
+    );
+  };
+
   return (
     <div className="section" id="budget">
       <h2>Budget</h2>
       <div className="section-content">
         <p>
-          Please enter your preferred budget or price range for your Solar
-          Assisted Geothermal Source Heat Pump in the box below. Refer to the
-          question mark on the top right corner for more information and details
-          on pricing for SAGSHPs.
+          Please enter your preferred budget range for your Solar Assisted
+          Geothermal Source Heat Pump below.
         </p>
-        <div className="input-container">
+        <div className="input-container budget-inputs">
           <input
-            type="text"
+            type="number"
             className="other-input-field"
-            placeholder="Enter your budget here"
+            placeholder="Min budget ($)"
+            value={min}
+            onChange={(e) => setMin(e.target.value)}
           />
-          {/* questionmark    <span className="question-icon">?</span> */}
+          <input
+            type="number"
+            className="other-input-field"
+            placeholder="Max budget ($)"
+            value={max}
+            onChange={(e) => setMax(e.target.value)}
+          />
         </div>
-        <button className="save-btn">Save</button>
+        <button className="save-btn" onClick={handleSave}>
+          Save
+        </button>
       </div>
     </div>
   );

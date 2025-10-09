@@ -5,7 +5,6 @@ export const getSolarData = async (lat, lon) => {
     if (!apiKey)
         throw new Error("Missing NREL_API_KEY");
     try {
-        // 1️⃣ Solar Resource
         console.log("Fetching Solar Resource data...");
         const resourceUrl = "https://developer.nrel.gov/api/solar/solar_resource/v1.json";
         const resourceParams = { api_key: apiKey, lat, lon };
@@ -18,7 +17,6 @@ export const getSolarData = async (lat, lon) => {
             avgGhiAnnual: outputs.avg_ghi?.annual ?? null,
             avgLatTiltAnnual: outputs.avg_lat_tilt?.annual ?? null,
         };
-        // 2️⃣ PVWatts
         console.log("Fetching PVWatts data...");
         const pvUrl = "https://developer.nrel.gov/api/pvwatts/v8.json";
         const pvParams = {
