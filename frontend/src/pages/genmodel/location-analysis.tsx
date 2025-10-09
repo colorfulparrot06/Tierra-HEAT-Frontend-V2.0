@@ -24,9 +24,9 @@ const LocationAnalysis: React.FC = () => {
           console.log("Response from API Server:", data); // <-- here you can inspect the response
           setData(data); // store it in state
         })
-        .then((res) => {
-          setData(res);
-        })
+        // .then((res) => {
+        //   setData(res);
+        // })
         .catch((err) => console.error("Failed to fetch backend data:", err));
       // }
     }
